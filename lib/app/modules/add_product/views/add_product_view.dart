@@ -12,6 +12,7 @@ class AddProductView extends GetView<AddProductController> {
         appBar: AppBar(
           title: const Text('AddMahasiswaView'),
           centerTitle: true,
+          backgroundColor: Colors.redAccent,
         ),
         body: Padding(
           padding: EdgeInsets.all(8),
