@@ -11,39 +11,67 @@ class UpdateProductView extends GetView<UpdateProductController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UpdateProductView'),
+        title: const Text('Update Mahasiswa'),
         centerTitle: true,
+        backgroundColor: Colors.redAccent,
       ),
       body: FutureBuilder<DocumentSnapshot<Object?>>(
         future: controller.GetData(Get.arguments),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             var data = snapshot.data!.data() as Map<String, dynamic>;
-            controller.cNama.text = data['name'];
-            controller.cHarga.text = data['price'].toString();
+            controller.cNpm.text = data['npm'].toString();
+            controller.cNama.text = data['nama'];
+            controller.cAlamat.text = data['alamat'];
+            controller.cProgram.text = data['program_studi'];
+            controller.cJk.text = data['jk'];
             return Padding(
               padding: EdgeInsets.all(8),
               child: Column(children: [
                 TextField(
-                  controller: controller.cNama,
+                  controller: controller.cNpm,
                   autocorrect: false,
                   textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(labelText: "Nama Produk"),
+                  decoration: InputDecoration(labelText: "Npm"),
                 ),
                 SizedBox(),
                 TextField(
-                  controller: controller.cHarga,
-                  textInputAction: TextInputAction.done,
+                  controller: controller.cNama,
+                  textInputAction: TextInputAction.next,
                   keyboardType: TextInputType.number,
-                  decoration: InputDecoration(labelText: "Harga Produk"),
+                  decoration: InputDecoration(labelText: "Nama"),
                 ),
+                TextField(
+                  controller: controller.cAlamat,
+                  autocorrect: false,
+                  textInputAction: TextInputAction.next,
+                  decoration: InputDecoration(labelText: "Alamat"),
+                ),
+                SizedBox(),
+                TextField(
+                  controller: controller.cProgram,
+                  autocorrect: false,
+                  textInputAction: TextInputAction.next,
+                  decoration: InputDecoration(labelText: "Program Studi"),
+                ),
+                TextField(
+                  controller: controller.cJk,
+                  autocorrect: false,
+                  textInputAction: TextInputAction.done,
+                  decoration: InputDecoration(labelText: "Jenis Kelamin"),
+                ),
+                SizedBox(),
+                SizedBox(),
                 SizedBox(
                   height: 30,
                 ),
                 ElevatedButton(
                     onPressed: () => controller.updateProduct(
+                          controller.cNpm.text,
                           controller.cNama.text,
-                          controller.cHarga.text,
+                          controller.cAlamat.text,
+                          controller.cProgram.text,
+                          controller.cJk.text,
                           Get.arguments,
                         ),
                     child: Text("ubah")),

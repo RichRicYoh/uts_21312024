@@ -4,28 +4,38 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class UpdateProductController extends GetxController {
+  late TextEditingController cNpm;
   late TextEditingController cNama;
-  late TextEditingController cHarga;
+  late TextEditingController cAlamat;
+  late TextEditingController cProgram;
+  late TextEditingController cJk;
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   Future<DocumentSnapshot<Object?>> GetData(String id) async {
-    DocumentReference docRef = firestore.collection("production").doc(id);
+    DocumentReference docRef = firestore.collection("mahasiswa").doc(id);
     return docRef.get();
   }
 
-  void updateProduct(String nama, String harga, String id) async {
-    DocumentReference productById = firestore.collection("production").doc(id);
+  void updateProduct(String npm, String nama, String alamat, String program,
+      String jk, String id) async {
+    DocumentReference productById = firestore.collection("mahasiswa").doc(id);
     try {
       await productById.update({
-        "name": nama,
-        "price": harga,
+        "npm": npm,
+        "nama": nama,
+        "alamat": alamat,
+        "program_studi": program,
+        "jk": jk
       });
       Get.defaultDialog(
           title: "Berhasil",
           middleText: "Berhasil mengubah data product",
           onConfirm: () {
+            cNpm.clear();
             cNama.clear();
-            cHarga.clear();
+            cAlamat.clear();
+            cProgram.clear();
+            cJk.clear();
             Get.back();
             Get.back();
           },
@@ -42,8 +52,11 @@ class UpdateProductController extends GetxController {
   @override
   void onInit() {
     // TODO: implement onInit
+    cNpm = TextEditingController();
     cNama = TextEditingController();
-    cHarga = TextEditingController();
+    cAlamat = TextEditingController();
+    cProgram = TextEditingController();
+    cJk = TextEditingController();
     super.onInit();
   }
 
@@ -51,8 +64,11 @@ class UpdateProductController extends GetxController {
   void onClose() {
     // TODO: implement onClose
 
+    cNpm.dispose();
     cNama.dispose();
-    cHarga.dispose();
+    cAlamat.dispose();
+    cProgram.dispose();
+    cJk.dispose();
     super.onClose();
   }
 }
