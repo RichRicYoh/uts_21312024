@@ -14,6 +14,7 @@ class SignupView extends GetView<SignupController> {
         appBar: AppBar(
           title: const Text('Signup View'),
           centerTitle: true,
+          backgroundColor: Colors.redAccent,
         ),
         body: Container(
           padding: EdgeInsets.all(10),

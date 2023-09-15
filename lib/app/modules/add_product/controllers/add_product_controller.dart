@@ -7,30 +7,23 @@ class AddProductController extends GetxController {
   late TextEditingController cNpm;
   late TextEditingController cNama;
   late TextEditingController cAlamat;
-  late TextEditingController cProgram;
-  late TextEditingController cJk;
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  Future<void> addProduct(
-      String npm, String nama, String alamat, String jk, String program) async {
-    CollectionReference mahasis = firestore.collection("mahasiswa");
+  Future<void> addProduct(String npm, String nama, String alamat) async {
+    CollectionReference mahasis = firestore.collection("mahasiswa_21312024");
     try {
       await mahasis.add({
         "npm": npm,
         "nama": nama,
         "alamat": alamat,
-        "program_studi": program,
-        "jk": jk
       });
       Get.defaultDialog(
           title: "Berhasil",
-          middleText: "Berhasil menyimpan data produk",
+          middleText: "Berhasil menyimpan data Mahasiswa",
           onConfirm: () {
             cNpm.clear();
             cNama.clear();
             cAlamat.clear();
-            cProgram.clear();
-            cJk.clear();
             Get.back();
             Get.back();
             textConfirm:
@@ -45,8 +38,6 @@ class AddProductController extends GetxController {
     cNpm = TextEditingController();
     cNama = TextEditingController();
     cAlamat = TextEditingController();
-    cProgram = TextEditingController();
-    cJk = TextEditingController();
     super.onInit();
   }
 
@@ -56,8 +47,6 @@ class AddProductController extends GetxController {
     cNpm.dispose();
     cNama.dispose();
     cAlamat.dispose();
-    cProgram.dispose();
-    cJk.dispose();
     super.onClose();
   }
 }

@@ -7,25 +7,22 @@ class UpdateProductController extends GetxController {
   late TextEditingController cNpm;
   late TextEditingController cNama;
   late TextEditingController cAlamat;
-  late TextEditingController cProgram;
-  late TextEditingController cJk;
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
   Future<DocumentSnapshot<Object?>> GetData(String id) async {
-    DocumentReference docRef = firestore.collection("mahasiswa").doc(id);
+    DocumentReference docRef =
+        firestore.collection("mahasiswa_21312024").doc(id);
     return docRef.get();
   }
 
-  void updateProduct(String npm, String nama, String alamat, String program,
-      String jk, String id) async {
-    DocumentReference productById = firestore.collection("mahasiswa").doc(id);
+  void updateProduct(String npm, String nama, String alamat, String id) async {
+    DocumentReference productById =
+        firestore.collection("mahasiswa_21312024").doc(id);
     try {
       await productById.update({
         "npm": npm,
         "nama": nama,
         "alamat": alamat,
-        "program_studi": program,
-        "jk": jk
       });
       Get.defaultDialog(
           title: "Berhasil",
@@ -34,8 +31,6 @@ class UpdateProductController extends GetxController {
             cNpm.clear();
             cNama.clear();
             cAlamat.clear();
-            cProgram.clear();
-            cJk.clear();
             Get.back();
             Get.back();
           },
@@ -55,8 +50,6 @@ class UpdateProductController extends GetxController {
     cNpm = TextEditingController();
     cNama = TextEditingController();
     cAlamat = TextEditingController();
-    cProgram = TextEditingController();
-    cJk = TextEditingController();
     super.onInit();
   }
 
@@ -67,8 +60,6 @@ class UpdateProductController extends GetxController {
     cNpm.dispose();
     cNama.dispose();
     cAlamat.dispose();
-    cProgram.dispose();
-    cJk.dispose();
     super.onClose();
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:projects_get/app/routes/app_pages.dart';
+import 'package:uas_21312024/app/routes/app_pages.dart';
 
 import '../../../controllers/auth_controller.dart';
 import '../../../routes/app_pages.dart';
@@ -68,12 +68,12 @@ class LoginView extends GetView<LoginController> {
               SizedBox(
                 height: 10,
               ),
-              ElevatedButton(
-                onPressed: () => cAuth.LoginGoogle(),
-                child: Text("Login with Google"),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red, foregroundColor: Colors.white),
-              ),
+              // ElevatedButton(
+              //   onPressed: () => cAuth.LoginGoogle(),
+              //   child: Text("Login with Google"),
+              //   style: ElevatedButton.styleFrom(
+              //       backgroundColor: Colors.red, foregroundColor: Colors.white),
+              // ),
               SizedBox(
                 height: 20,
               ),

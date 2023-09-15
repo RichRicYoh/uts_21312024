@@ -23,8 +23,6 @@ class UpdateProductView extends GetView<UpdateProductController> {
             controller.cNpm.text = data['npm'].toString();
             controller.cNama.text = data['nama'];
             controller.cAlamat.text = data['alamat'];
-            controller.cProgram.text = data['program_studi'];
-            controller.cJk.text = data['jk'];
             return Padding(
               padding: EdgeInsets.all(8),
               child: Column(children: [
@@ -47,33 +45,15 @@ class UpdateProductView extends GetView<UpdateProductController> {
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(labelText: "Alamat"),
                 ),
-                SizedBox(),
-                TextField(
-                  controller: controller.cProgram,
-                  autocorrect: false,
-                  textInputAction: TextInputAction.next,
-                  decoration: InputDecoration(labelText: "Program Studi"),
-                ),
-                TextField(
-                  controller: controller.cJk,
-                  autocorrect: false,
-                  textInputAction: TextInputAction.done,
-                  decoration: InputDecoration(labelText: "Jenis Kelamin"),
-                ),
-                SizedBox(),
-                SizedBox(),
                 SizedBox(
                   height: 30,
                 ),
                 ElevatedButton(
                     onPressed: () => controller.updateProduct(
-                          controller.cNpm.text,
-                          controller.cNama.text,
-                          controller.cAlamat.text,
-                          controller.cProgram.text,
-                          controller.cJk.text,
-                          Get.arguments,
-                        ),
+                        controller.cNpm.text,
+                        controller.cNama.text,
+                        controller.cAlamat.text,
+                        Get.arguments),
                     child: Text("ubah")),
               ]),
             );

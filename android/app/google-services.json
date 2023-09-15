@@ -1,43 +1,26 @@
 {
   "project_info": {
-    "project_number": "71904925721",
-    "project_id": "fir-21312024",
-    "storage_bucket": "fir-21312024.appspot.com"
+    "project_number": "535054294504",
+    "project_id": "uas-21312024",
+    "storage_bucket": "uas-21312024.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:71904925721:android:e0e6a54a9a0c757f443288",
+        "mobilesdk_app_id": "1:535054294504:android:dcfbc8c4d6323f1cfe585d",
         "android_client_info": {
           "package_name": "com.ifgabsp.projects_get"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "71904925721-m2ah9o1ohq755qijsd6ss1pr6dbdos80.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBxhUYwjguKkv8TfrmUnlXdf7YgzncgpxY"
+          "current_key": "AIzaSyAnvFnvar6EstskjvhSsDYbUagvcFwLWXs"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "71904925721-m2ah9o1ohq755qijsd6ss1pr6dbdos80.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "71904925721-gvc9hnmofgglpfj7c6jeu9cok993evei.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.ifgabsp.projectsGet"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

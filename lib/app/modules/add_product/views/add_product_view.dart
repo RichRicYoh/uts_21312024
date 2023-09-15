@@ -36,31 +36,15 @@ class AddProductView extends GetView<AddProductController> {
               textInputAction: TextInputAction.next,
               decoration: InputDecoration(labelText: "Alamat"),
             ),
-            SizedBox(),
-            TextField(
-              controller: controller.cProgram,
-              autocorrect: false,
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(labelText: "Program Studi"),
-            ),
-            SizedBox(),
-            TextField(
-              controller: controller.cJk,
-              autocorrect: false,
-              textInputAction: TextInputAction.done,
-              decoration: InputDecoration(labelText: "Jenis Kelamin"),
-            ),
-            SizedBox(),
             SizedBox(
               height: 30,
             ),
             ElevatedButton(
                 onPressed: () => controller.addProduct(
-                    controller.cNpm.text,
-                    controller.cNama.text,
-                    controller.cAlamat.text,
-                    controller.cProgram.text,
-                    controller.cJk.text),
+                      controller.cNpm.text,
+                      controller.cNama.text,
+                      controller.cAlamat.text,
+                    ),
                 child: Text("simpan")),
           ]),
         ));

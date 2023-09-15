@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:projects_get/app/controllers/auth_controller.dart';
-import 'package:projects_get/app/routes/app_pages.dart';
+import 'package:uas_21312024/app/controllers/auth_controller.dart';
+import 'package:uas_21312024/app/routes/app_pages.dart';
 
 import '../controllers/reset_password_controller.dart';
 

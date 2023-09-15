@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:projects_get/app/controllers/auth_controller.dart';
+import 'package:uas_21312024/app/controllers/auth_controller.dart';
 import 'app/utils/loading.dart';
 import 'firebase_options.dart';
 import 'package:get/get.dart';
